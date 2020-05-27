@@ -1,0 +1,736 @@
+<!--/*HTML FILE FOR CLIENT SIDE SCRIPTING PROJECT-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Accessability Survey</title>
+
+<link rel="stylesheet" type="text/css" href="css.css">
+
+<!--Font from <fonts.google.com>-->
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<button id="back-to-top-btn">Back to Top!</button>
+	<br/><br/>
+
+	<div id="timerLabel">
+		<h2>This survey will expire in 10 minutes.</h2>
+	</div><br/><br/>
+
+	<div id="divIntro">
+
+		<h1>Introduction</h1>
+		<div>
+			<form name="introForm">
+				<h3> Basic Information </h3>
+				<label>
+					Name of your organisation: &nbsp; <br/>
+				</label><input type="text" name="txtIntroName" maxlength="50"><br/><br/>
+				<label>
+					Brief Description of the organisation: &nbsp; <br/>
+				</label><input type="text" name="txtIntroDescription" maxlength="200" style="width: 50%"><br/><br/>
+				<h3>Location</h3>
+		
+				<label>Continent: </label><br/>
+				  <select id="continentSelect" onchange="fillCountries()">
+					<option value="">Please Make Selection</option>
+					<option value="Asia">Asia</option>
+					<option value="Africa">Africa</option>
+					<option value="Oceania">Oceania</option>
+					<option value="Europe">Europe</option>
+					<option value="North_America">North America</option>
+					<option value="South_America">South America</option>
+				  </select>
+				  
+				  <br/><br/>
+				  <label>Country: </label><br/>
+		
+				  <select id="countrySelect">
+					<option value="">Please Make Selection</option>
+				  </select>
+				</form>
+
+		</div>
+		
+	</div>
+
+	<br/><br/>
+	<div id="section1">
+
+		<h2> Section 1: Verification </h2>
+
+		<div class="sec1q1">
+			1) I and/or my colleagues know where to get information to help us analyse<br/>
+			the business case for consciously attracting people with disabilities as
+			members</br><br/>
+			<input type="radio" name="section1q1" value="1">
+			1
+			</input></br>
+			<input type="radio" name="section1q1" value="2">
+			2
+			</input></br>
+			<input type="radio" name="section1q1" value="3">
+			3
+			</input></br>
+			<input type="radio" name="section1q1" value="4">
+			4
+			</input></br>
+			<input type="radio" name="section1q1" value="5">
+			5
+			</input>
+			</br>
+		</div>
+		<br/>
+		<div class="sec1q2">
+			2) I/my colleagues have researched the scope for increasing the participation<br/>
+			of the broader community, in particular people with disabilities</br><br/>
+			<input type="radio" name="section1q2" value="1">
+			1
+			</input></br>
+			<input type="radio" name="section1q2" value="2">
+			2
+			</input></br>
+			<input type="radio" name="section1q2" value="3">
+			3
+			</input></br>
+			<input type="radio" name="section1q2" value="4">
+			4
+			</input></br>
+			<input type="radio" name="section1q2" value="5">
+			5
+			</input>
+		</div>
+		<br/>
+		<div class="sec1q3">
+			3) I know of disability service providers<br/>
+			that I could link with in the local
+			community</br><br/>
+			<input type="radio" name="section1q3" value="1">
+			1
+			</input></br>
+			<input type="radio" name="section1q3" value="2">
+			2
+			</input></br>
+			<input type="radio" name="section1q3" value="3">
+			3
+			</input></br>
+			<input type="radio" name="section1q3" value="4">
+			4
+			</input></br>
+			<input type="radio" name="section1q3" value="5">
+			5
+			</input>
+		</div>
+		<br/>
+		<div class="sec1q4">
+			4) My colleagues and I inclusivize our services<br/>
+			to provide for people with
+			disabilities</br><br/>
+			<input type="radio" name="section1q4" value="1">
+			1
+			</input></br>
+			<input type="radio" name="section1q4" value="2">
+			2
+			</input></br>
+			<input type="radio" name="section1q4" value="3">
+			3
+			</input></br>
+			<input type="radio" name="section1q4" value="4">
+			4
+			</input></br>
+			<input type="radio" name="section1q4" value="5">
+			5
+			</input>
+		</div>
+		<br/>
+		
+		<div id="section1Result">
+			<input  id="section1Button" type="button" name="section1" value="Check Score" onclick="getSection1Results()">
+			<br/>
+			<br/>
+
+			<!--WRITE RESULTS HERE-->
+			
+	
+		</div>
+	</div>
+	
+	<br/><br/>
+	<div id="section2">
+		<h2> Section 2: Value Proposition </h2>
+
+		<div class="sec2q1">
+			1) My colleagues and I have a significant contribution to make to the quality of life<br/>
+			of people in our community, including people with disabilities</br><br/>
+			<input type="radio" name="section2q1" value="1">
+			1
+			</input></br>
+			<input type="radio" name="section2q1" value="2">
+			2
+			</input></br>
+			<input type="radio" name="section2q1" value="3">
+			3
+			</input></br>
+			<input type="radio" name="section2q1" value="4">
+			4
+			</input></br>
+			<input type="radio" name="section2q1" value="5">
+			5
+			</input>
+		</div>
+		<br/>
+		<div class="sec2q2">
+			2) My colleagues and I have the scope to improve opportunities for participation<br/>
+			in fitness activities for people living in,<br/>
+			or visiting our community, including people with disabilities</br><br/>
+			<input type="radio" name="section2q2" value="1">
+			1
+			</input></br>
+			<input type="radio" name="section2q2" value="2">
+			2
+			</input></br>
+			<input type="radio" name="section2q2" value="3">
+			3
+			</input></br>
+			<input type="radio" name="section2q2" value="4">
+			4
+			</input></br>
+			<input type="radio" name="section2q2" value="5">
+			5
+			</input>
+		</div>
+		<br/>
+		<div class="sec2q3">
+			3) My colleagues and I have the scope to improve opportunities<br/>
+			for participation in fitness activities for people living in,<br/>
+			or visiting our community, including people with disabilities<br/><br/>
+			<input type="radio" name="section2q3" value="1">
+			1
+			</input></br>
+			<input type="radio" name="section2q3" value="2">
+			2
+			</input></br>
+			<input type="radio" name="section2q3" value="3">
+			3
+			</input></br>
+			<input type="radio" name="section2q3" value="4">
+			4
+			</input></br>
+			<input type="radio" name="section2q3" value="5">
+			5
+			</input>
+		</div>
+		<br/>
+		<div class="sec2q4">
+			4) My colleagues and I play a major role in providing health<br/>
+			services to the entire community,<br/>
+			including people with disabilities<br/><br/>
+			<input type="radio" name="section2q4" value="1">
+			1
+			</input></br>
+			<input type="radio" name="section2q4" value="2">
+			2
+			</input></br>
+			<input type="radio" name="section2q4" value="3">
+			3
+			</input></br>
+			<input type="radio" name="section2q4" value="4">
+			4
+			</input></br>
+			<input type="radio" name="section2q4" value="5">
+			5
+			</input>
+		</div>
+		<br/>
+		<div class="sec2q5">
+			5) The UniversAbility  of our fitness services<br/>
+			increases the job satisfaction and turnover of my staff<br/><br/>
+			<input type="radio" name="section2q5" value="1">
+			1
+			</input></br>
+			<input type="radio" name="section2q5" value="2">
+			2
+			</input></br>
+			<input type="radio" name="section2q5" value="3">
+			3
+			</input></br>
+			<input type="radio" name="section2q5" value="4">
+			4
+			</input></br>
+			<input type="radio" name="section2q5" value="5">
+			5
+			</input>
+		</div>
+		<br/>
+		
+		<div id="section2Result">
+			<input id="section2Button" type="button" name="section2" value="Check Results" onclick="getSection2Results()">
+			<br/>
+			<br/>
+
+		</div>
+	</div>
+	<br/><br/>
+	<div id="section3">
+
+		<h2> Section 3: Vision </h2>
+		
+		<div class="sec3q1">
+			1) My colleagues and I envision ourselves as leaders of cultural change<br/><br/>
+			<input type="radio" name="section3q1" value="1">
+			1
+			</input></br>
+			<input type="radio" name="section3q1" value="2">
+			2
+			</input></br>
+			<input type="radio" name="section3q1" value="3">
+			3
+			</input></br>
+			<input type="radio" name="section3q1" value="4">
+			4
+			</input></br>
+			<input type="radio" name="section3q1" value="5">
+			5
+			</input>
+			<br/>
+		</div>
+		<br/>
+		<div class="sec3q2">
+
+			Which of the following statements best describes your situation within your organisation? <b></b>(Please select one)<br/><br/>
+			<div class="innerQuestions">
+
+				<input type="radio" name="section3q2" id="sec3q2A" value="5"></input>
+				I and/or my colleagues have identified set targets for increasing the UniversAbility<br/>
+				of our services and are putting strategies in place to achieve these goals<br/><br/>
+
+				<input type="radio" name="section3q2" id="sec3q2B" value="4"></input>
+				I and/or my colleagues have identified scope for increasing the UniversAbility  of our services<br/><br/>
+
+				<input type="radio" name="section3q2" id="sec3q2C" value="3"></input>
+				I think there may be scope for inclusivizing our services but am not sure<br/><br/>
+
+				<input type="radio" name="section3q2" id="sec3q2D" value="2"></input>
+				I have never considered inclusivizing our services until now<br/><br/>
+
+				<input type="radio" name="section3q2" id="sec3q2E" value="1"></input>
+				I don’t think inclusivizing our services, in particular for people with disabilities,<br/>
+				is really an option for us but won’t rule it out completely<br/>
+				until it has been fully explored<br/><br/>
+
+			</div>
+
+		</div>
+		<br/>
+		
+		<div id="section3Result">
+			<input id="section3Button" type="button" name="section3" value="Check Results" onclick="getSection3Results()">
+		<br/><br/>
+
+		</div>
+		</div>
+		<br/><br/>
+
+		<div id="Section4">
+		<h2> Section 4: Philosophy </h2>
+		
+		<div class="sec4q1">
+			1. Does your organisation have stated ideals in your strategic plan or other management</br>
+			documents which relate UniversAbility of your services?</br><br/>
+			Yes <input id="section4q1_yes" type="radio" name="section4q1" value="10" onchange="section4Check();"></input>&nbsp;<br/>
+			No <input id="section4q1_no" type="radio" name="section4q1" value="0" onchange="section4Check()"></input>
+			</br>
+		</div></br>
+		<div class="sec4q2">
+			2. Do you think an inclusive philosophy is a lived experience by:</br><br/>
+			a) Management?<input type="checkbox" id="sec4check1" value="10" name="section4q2" disabled="true"></input>&nbsp;<br/>
+			b) Staff?<input type="checkbox" id="sec4check2" value="10" name="section4q2" disabled="true"></input>&nbsp;<br/>
+			c) Customers?<input type="checkbox" id="sec4check3" value="10" name="section4q2" disabled="true"></input><br/>
+			</br>
+		</div></br>
+		
+		<div id="section4Result">
+			<input id="section4Button" type="button" name="section4" value="Check Results" onclick="getSection4Results()"><br/><br/>
+
+		</div>
+		</div>
+		<br/>
+		<br/>
+
+
+		<div id="section5">
+			<h2> Section 5: Policy </h2>
+			
+			<div class="sec5q1">
+				1) Does your charging policy account for the varied <br/>
+				needs of your customers? E.g. No charge for personal assistants<br/><br/>
+				<input type="radio" name="section5q1" id="sec5q1_yes" value="10"></input><label>Yes</label><br/>
+				<input type="radio" name="section5q1" id="sec5q1_no" value="0"><label>No:</label></input>
+			</div>
+			<br/>
+			<div class="sec5q2">
+				2) Do you track and monitor the proportion of your <br/>
+				club members who experience disabilities? <br/><br/>
+				<input type="radio" name="section5q2" id="sec5q2_yes" value="10"></input><label>Yes</label><br/>
+				<input type="radio" name="section5q2" id="sec5q2_no" value="0"></input><label>No</label>
+			</div>
+			<br/>
+			<div class="sec5q3">
+				3) Have you a budget allocated to: <br/> <br/>
+				<div class="innerQuestions sec5q3A">
+					A) increasing the UniversAbility of your services?<br/> 
+					(eg. facilities, equipment and staff
+					training) <br/><br/>
+					<input type="radio" name="section5q3A" id="sec5q3A_yes" value="10"></input><label>Yes</label><br/>
+					<input type="radio" name="section5q3A" id="sec5q3A_no" value="0"></input><label>No</label><br/>
+					<input type="radio" name="section5q3A" id="sec5q3A_irrelevant" value="10"></input><label>Not needed because the 
+					equipment is already fully accessible</label><br/>
+				</div>
+				<br>
+				<div class="innerQuestions sec5q3B">
+					B) increasing the UniversAbility  of your policies? <br/><br/>
+					<input type="radio" name="section5q3B" id="sec5q3B_yes" value="10"></input><label>Yes</label><br/>
+					<input type="radio" name="section5q3B" id="sec5q3B_no" value="0"></input><label>No</label><br/>
+				</div>
+			</div>
+			<br/>
+			<div class="sec5q4">
+				4) Are you familiar with the national legislation that relates to disability service provision? <br/><br/>
+				<input type="radio" name="section5q4" id="sec5q4_yes" value="10"></input><label>Yes</label><br/>
+				<input type="radio" name="section5q4" id="sec5q4_no" value="0"></input><label>No</label><br/>
+			</div>
+			<br/>
+			<div id="section5Result">
+				<input id="section5Button" type="button" name="section5" value="Check Results" onclick="getSection5Results()"><br/><br/>
+	
+			</div>
+
+		</div>
+		<br/>
+		<br/>
+		<div id="section6">
+			<h2> Section 6: Processes </h2>
+
+			<div class="sec6q1">
+				1)  Do you engage with disability groups in your local community? <br/><br/>
+				<input type="radio" name="section6q1" value="10" id="sec6q1_yes"></input><label>Yes</label><br/>
+				<input type="radio" name="section6q1" value="0" id="sec6q1_no"></input><label>No</label><br/>
+			</div>
+			<br>
+			<div class="sec6q2">
+				2) Have you forged any alliance/partnership with any disability organisation? <br/><br/>
+				<input type="radio" name="section6q2" value="10" id="sec6q2_yes"></input><label>Yes</label><br/>
+				<input type="radio" name="section6q2" value="0" id="sec6q2_no"></input><label>No</label><br/>
+			</div>
+			<br>
+			<div class="sec6q3">
+				3) Have you or your staff embraced any assistive technologies (E.g. Assist-Mi app)? <br/><br/>
+				<input type="radio" name="section6q3" value="10" id="sec6q3_yes"></input><label>Yes</label><br/>
+				<input type="radio" name="section6q3" value="0" id="sec6q3_no"></input><label>No</label><br/>
+			</div>
+			<br>
+			<div class="sec6q4">
+				4)  Have you or your colleagues undertaken any research on Inclusivizing your service? <br/>
+				<input type="radio" name="section6q4" value="10" id="sec6q4_yes"></input><label>Yes</label><br/>
+				<input type="radio" name="section6q4" value="0" id="sec6q4_no"></input><label>No</label><br/>
+			</div>
+			<br>
+			<div class="sec6q5">
+				5) Do you encourage your staff to engage in customer satisfaction<br/>
+				conversations with
+				different user groups? <br/><br/>
+				<input type="radio" name="section6q5" value="10" id="sec6q5_yes"></input><label>Yes</label><br/>
+				<input type="radio" name="section6q5" value="0" id="sec6q5_no"></input><label>No</label><br/>
+			</div>
+			<br>
+			<div id="section6Result">
+				<input id="section6Button" type="button" name="section6" value="Check Results" onclick="getSection6Results()"><br/><br/>
+	
+			</div>
+
+		</div>
+		<br/>
+		<br/>
+		<div id="section7">
+
+			<h2> Section 7: Perception </h2>
+
+			<div class="sec7q1">
+
+				1) Do you gather information from your users on their beliefs about fitness<br/>
+				being a fundamental right for all?<br/><br/>
+				<input type="radio" name="section7q1" value="10" id="sec7q1_yes"></input><label>Yes</label><br/>
+				<input type="radio" name="section7q1" value="0" id="sec7q1_no"></input><label>No</label><br/>
+
+			</div>
+			<br/>
+
+			<div class="sec7q2">
+
+				2) Do you gather information from people who do NOT use your</br>
+				facility on fitness being a fundamental right for all?<br/><br/>
+				<input type="radio" name="section7q2" value="10" id="sec7q2_yes"></input><label>Yes</label><br/>
+				<input type="radio" name="section7q2" value="0" id="sec7q2_no"></input><label>No</label><br/>
+
+			</div>
+			<br/>
+			<div id="section7Result">
+				<input id="section7Button" type="button" name="section7" value="Check Results" onclick="getSection7Results()"><br/><br/>
+	
+			</div>
+
+		</div>
+		<br/>
+		<br/>
+		<div id="section8">
+
+			<h2> Section 8: Programmes </h2>
+
+			This section refers to programmes that you deliver, or support delivery of,<br/>
+			to consciously inclusivize your services
+
+			<br/><br/><br/>
+			<div class="sec8q1">
+
+				1) Do you and your staff provide <b>programmes specifically</b><br/>
+				for people with disabilities?<br/><br/>
+				<input type="radio" name="section8q1" id="sec8q1_yes" value="0" onchange="section8Q1Check()"></input><label>Yes</label><br/>
+				<input type="radio" name="section8q1" id="sec8q1_no" value="0" onchange="section8Q1Check()"></input><label>No</label><br/>
+
+				<br/>
+
+				If "yes", please complete the table below. <br/><br/>
+
+				<div class="innerQuestions sec8q1A">
+
+					<table style="width:100%">
+						<tr>
+						  	<th align="left">Disability Category</th>
+						  	<th align="left">Answer</th>
+						</tr>
+						<tr>
+						  	<td>Physical Disabilities</td>
+						  	<td align="left"><input type="checkbox" name="sec8q1check" id="section8q1check1" value="10" disabled="true"></td>
+						</tr>
+						<tr>
+						  	<td>Intellectual disabilities</td>
+						  	<td align="left"><input type="checkbox" name="sec8q1check" id="section8q1check2" value="10" disabled="true"></td>
+						</tr>
+						<tr>
+						  	<td>Sensory Disabilities</td>
+						  	<td align="left"><input type="checkbox" name="sec8q1check" id="section8q1check3" value="10" disabled="true"></td>
+						</tr>
+						<tr>
+							<td>Mental health Difficulties</td>
+							<td align="left"><input type="checkbox" name="sec8q1check" id="section8q1check4" value="10" disabled="true"></td>
+						</tr>
+					  </table>
+
+				</div>
+
+			</div>
+			<br/>
+			<div class="sec8q2">
+				2) Do people with disabilities use the gym, pool,<br/>
+				or participate in group activities etc. alongside other members? <br/><br/>
+				<input type="radio" name="section8q2" value="0" id="sec8q2_yes" onchange="section8Q2Check()"></input><label>Yes</label><br/>
+				<input type="radio" name="section8q2" value="0" id="sec8q2_no" onchange="section8Q2Check()"></input><label>No</label><br/>
+
+				<br/>
+
+				If "yes", please complete the table below. <br/><br/>
+
+				<div class="innerQuestions sec8q2A">
+
+					<table style="width:100%">
+						<tr>
+						  	<th align="left">Disability Category</th>
+						  	<th align="left">Answer</th>
+						</tr>
+						<tr>
+						  	<td>Physical Disabilities</td>
+						  	<td align="left"><input type="checkbox" name="sec8q2check" id="section8q2check1" value="10" disabled="true"></td>
+						</tr>
+						<tr>
+						  	<td>Intellectual disabilities</td>
+						  	<td align="left"><input type="checkbox" name="sec8q2check" id="section8q2check2" value="10" disabled="true"></td>
+						</tr>
+						<tr>
+						  	<td>Sensory Disabilities</td>
+						  	<td align="left"><input type="checkbox" name="sec8q2check" id="section8q2check3" value="10" disabled="true"></td>
+						</tr>
+						<tr>
+							<td>Mental health Difficulties</td>
+							<td align="left"><input type="checkbox" name="sec8q2check" id="section8q2check4" value="10" disabled="true"></td>
+						</tr>
+					  </table>
+
+				</div>
+
+			</div>
+			<br/>
+			<div id="section8Result">
+				<input id="section8Button" type="button" name="section8" value="Check Results" onclick="getSection8Results()"><br/><br/>
+	
+			</div>
+
+		</div> <!--section 8 end-->
+		<br/>
+		<br/>
+		<div id="section9">
+
+			<h2> Section 9: People</h2>
+			<br/>
+			<div>
+				1) Have you or any of your staff/volunteers had training that facilitates the<br/>
+				inclusion of people with disabilities?<br/><br/>
+
+				<div class="innerQuestions sec9q1">
+
+					<table style="width:100%">
+					
+						<tr>
+					  		<td>A) Operational (teaching/instructional staff)</td>
+					  		<td align="left"><input type="radio"  name="s9q1pa" id="section9q1partAYes" value="10">Yes</td>
+					  		<td align="left"><input type="radio" name="s9q1pa" id="section9q1partANo" value="0">No</td>
+						</tr>
+						<tr>
+					  		<td>B) Management</td>
+					  		<td align="left"><input type="radio" name="s9q1pb" id="section9q1partBYes" value="10">Yes</td>
+					  		<td align="left"><input type="radio" name="s9q1pb" id="section9q1partBNo" value="0">No</td>
+						</tr>
+						<tr>
+					  		<td>C) Front of House</td>
+					  		<td align="left"><input type="radio" name="s9q1pc" id="section9q1partCYes" value="10">Yes</td>
+					  		<td align="left"><input type="radio" name="s9q1pc" id="section9q1partCNo" value="0">No</td>
+						</tr>
+						<tr>
+							<td>D) Stakeholders</td>
+							<td align="left"><input type="radio" name="s9q1pd" id="section9q1partCYes" value="10">Yes</td>
+							<td align="left"><input type="radio" name="s9q1pd" id="section9q1partCNo" value="0">No</td>
+					  	</tr>
+				  	</table>
+
+				</div>
+			</div>
+			<br/>
+			<div class="sec9q2">
+				2) Are people with disabilities employed by your organisation and/or represented<br/>
+				on your steering committee/ management committee/ board of management etc.?<br/><br/>
+				<input type="radio" name="section9q2" id="sec9q2_yes" value="10"></input><label>Yes</label><br/>
+				<input type="radio" name="section9q2" id="sec9q2_no" value="0"></input><label>No</label><br/>
+			</div>
+			<br/>
+			<div class="sec9q3">
+				3) Is there a member of staff allocated as a liaison/point person for customers with disabilities?<br/><br/>
+				<input type="radio" name="section9q3" id="sec9q3_yes" value="10"></input><label>Yes</label><br/>
+				<input type="radio" name="section9q3" id="sec9q3_no" value="0"></input><label>No</label><br/>
+			</div>
+			<br/>
+			<div id="section9Result">
+				<input id="section9Button" type="button" name="section9" value="Check Results" onclick="getSection9Results()"><br/><br/>
+	
+			</div>
+		</div>
+		<br/><br/>
+		<div id="section10">
+
+			<h2> Section 10: Physical Access / Place </h2><br/>
+			<div class="sec10q1">
+
+				1) Have you or your colleagues carried out an audit to evaluate the UniversAbility  of your facility<br/><br/>
+				<input type="radio" name="section10q1" value="10" id="sec10q1_yes"></input><label>Yes</label><br/>
+				<input type="radio" name="section10q1" value="0" id="sec10q1_no"></input><label>No</label><br/>
+
+			</div>
+			<br/>
+			<div class="sec10q2">
+				<table style="width:100%">
+					<tr>
+						<th align="left">Disability Category</th>
+						<th align="left">Answer</th>
+					</tr>
+					<tr>
+						<td>Physical Disabilities</td>
+						<td align="left"><input type="checkbox" name="s10q2" id="section10q2Check1" value="10"></td>
+					</tr>
+					<tr>
+						<td>Intellectual disabilities</td>
+						<td align="left"><input type="checkbox" name="s10q2" id="section10q2check2" value="10"></td>
+					</tr>
+					<tr>
+						<td>Sensory Disabilities</td>
+						<td align="left"><input type="checkbox" name="s10q2" id="section10q2check3" value="10"></td>
+					</tr>
+					<tr>
+						<td>Mental health Difficulties</td>
+						<td align="left"><input type="checkbox" name="s10q2" id="section10q2check4" value="10"></td>
+					</tr>
+				</table>
+			</div>
+			<br/>
+				<div id="section10Result">
+					<input id="section10Button" type="button" name="section10" value="Check Results" onclick="getSection10Results()"><br/><br/>
+	
+				</div>
+		</div>
+		<br/><br/>
+		<div id="section11">
+
+			<h2> Section 11: Promotion </h2>
+			<div class="sec11q1">
+
+				1) Is your promotional material inclusive of people with disabilities?<br/><br/>
+				<input type="radio" name="section11q1" value="10" id="sec11q1_yes"></input><label>Yes</label><br/>
+				<input type="radio" name="section11q1" value="0" id="sec11q1_no"></input><label>No</label><br/>
+
+			</div>
+			<br/>
+			<div class="sec11q2">
+
+				2) Have you or your colleagues/staff developed any promotional materials with the aim<br/>
+				of attracting people with disabilities? <br/><br/>
+				<input type="radio" name="section11q2" value="10" id="sec11q2_yes"></input><label>Yes</label><br/>
+				<input type="radio" name="section11q2" value="0" id="sec11q2_no"></input><label>No</label><br/>
+
+			</div>
+			<br/>
+			<div id="section11Result">
+				<input id="section11Button" type="button" name="section11" value="Check Results" onclick="getSection11Score()"><br/><br/>
+			</div>
+
+		</div>
+		<br/>
+		<br/>
+
+		<div id="final_score">
+
+			<h2>Thank you for taking time to complete this survey.</h2><br/>
+
+			<div id="finalScoreButton">
+
+				<h3>Click the button below to get your final result of the survey.</h3>
+				<br/>
+				<input type="button" value="Show Results" onclick="getFinalScore()">
+				<p>(Opens in new window)</p><br/>
+				<div class="finalScoreResult">
+
+					<h4 id="finalH4">Your Final Results appear here</h4>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<br/><br/>
+		
+	</div>
+
+</body>
+
+<script src="javascript.js"> </script>
+
+</html>
