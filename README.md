@@ -1,2 +1,2 @@
-# JavaScriptS-Survey
+# JavaScript-Survey
 Survey in JS
