@@ -176,7 +176,7 @@ window.addEventListener("scroll", scrollFunction)
 
 function scrollFunction() {
 
-    if(window.pageYOffset > 600)
+    if(window.pageYOffset > 1000)
     {
         backToTopButton.style.display = "block";
     }
